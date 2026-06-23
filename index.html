@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSCH Bible 365</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#5b4bff" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">서산장로교회 학생부</p>
+        <h1>📖 말씀365</h1>
+        <p class="subtitle">매일 10분, 말씀과 함께 걷기</p>
+      </div>
+      <div class="day-badge"><span id="dayNumber">Day 1</span></div>
+    </header>
+
+    <section class="card today-card">
+      <p id="todayDate" class="date"></p>
+      <h2 id="todayTitle">오늘의 읽기</h2>
+      <div id="readings" class="readings"></div>
+      <p id="question" class="question"></p>
+      <button id="completeBtn" class="primary-btn">읽었어요 ✅</button>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card"><span>🔥</span><strong id="streak">0일</strong><small>연속 읽기</small></div>
+      <div class="stat-card"><span>📅</span><strong id="progress">0 / 365</strong><small>완료 현황</small></div>
+      <div class="stat-card"><span>🏅</span><strong id="badge">새싹</strong><small>나의 배지</small></div>
+    </section>
+
+    <section class="card">
+      <h2>🧠 오늘의 퀴즈</h2>
+      <p id="quizQuestion"></p>
+      <div id="quizOptions" class="quiz-options"></div>
+      <p id="quizResult" class="quiz-result"></p>
+    </section>
+
+    <section class="card">
+      <h2>📚 7일 미리보기</h2>
+      <div id="planList" class="plan-list"></div>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="active">홈</button>
+      <button onclick="document.querySelector('.plan-list').scrollIntoView({behavior:'smooth'})">읽기표</button>
+      <button onclick="alert('성경퀴즈 확장 예정입니다!')">퀴즈</button>
+      <button onclick="alert('학생부 공지 기능 추가 예정입니다!')">공지</button>
+    </nav>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "SSCH Bible 365",
+  "short_name": "말씀365",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0f1020",
+  "theme_color": "#5b4bff",
+  "icons": []
+}

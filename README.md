@@ -1,5 +1,15 @@
-# SSCH Bible365
+# SSCH Bible 365
 
-1 Year Bible Reading
+서산장로교회 학생부 1년 1독 성경읽기 PWA 초안입니다.
 
-Coming Soon...
+## 기능
+
+- 오늘의 성경읽기 범위
+- 읽었어요 체크
+- 연속 읽기
+- 진행률
+- 배지
+- 오늘의 퀴즈
+- 7일 미리보기
+- GitHub Pages 배포 가능
+- 홈 화면 추가 가능
