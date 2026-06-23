@@ -1,4 +1,4 @@
-const CACHE_NAME = "ssch-bible-365-v1";
+const CACHE_NAME = "ssch-bible365-v2";
 const ASSETS = ["./", "index.html", "style.css", "app.js", "manifest.json", "data/reading-plan.json"];
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));

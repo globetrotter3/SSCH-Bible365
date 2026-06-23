@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SSCH Bible 365</title>
+  <title>SSCH Bible365</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="style.css" />
-  <meta name="theme-color" content="#5b4bff" />
+  <meta name="theme-color" content="#111225" />
 </head>
 <body>
   <main class="app">
@@ -16,28 +16,59 @@
         <h1>📖 말씀365</h1>
         <p class="subtitle">매일 10분, 말씀과 함께 걷기</p>
       </div>
-      <div class="day-badge"><span id="dayNumber">Day 1</span></div>
+      <div class="day-badge" id="dayBadge">Day 1</div>
     </header>
 
     <section class="card today-card">
-      <p id="todayDate" class="date"></p>
-      <h2 id="todayTitle">오늘의 읽기</h2>
+      <div class="card-head">
+        <div>
+          <p class="date" id="todayDate"></p>
+          <h2>오늘의 읽기</h2>
+        </div>
+        <button class="small-btn" id="resetTodayBtn">오늘 초기화</button>
+      </div>
+
       <div id="readings" class="readings"></div>
-      <p id="question" class="question"></p>
+
+      <div class="verse-box">
+        <p class="label">✨ 오늘의 핵심 말씀</p>
+        <p id="keyVerse"></p>
+      </div>
+
+      <div class="question-box">
+        <p class="label">💭 묵상 질문</p>
+        <p id="question"></p>
+      </div>
+
       <button id="completeBtn" class="primary-btn">읽었어요 ✅</button>
     </section>
 
-    <section class="stats">
-      <div class="stat-card"><span>🔥</span><strong id="streak">0일</strong><small>연속 읽기</small></div>
-      <div class="stat-card"><span>📅</span><strong id="progress">0 / 365</strong><small>완료 현황</small></div>
-      <div class="stat-card"><span>🏅</span><strong id="badge">새싹</strong><small>나의 배지</small></div>
+    <section class="progress-card card">
+      <div class="circle" id="circleProgress">
+        <span id="percent">0%</span>
+      </div>
+      <div>
+        <h2>나의 말씀 여정</h2>
+        <p><b id="progress">0 / 365</b> 완료</p>
+        <p><b id="streak">0일</b> 연속 읽기</p>
+        <p>배지: <b id="badge">🌱 새싹</b></p>
+      </div>
     </section>
 
     <section class="card">
       <h2>🧠 오늘의 퀴즈</h2>
-      <p id="quizQuestion"></p>
+      <p id="quizQuestion" class="quiz-q"></p>
       <div id="quizOptions" class="quiz-options"></div>
       <p id="quizResult" class="quiz-result"></p>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>📅 365 체크 현황</h2>
+        <button class="small-btn" id="resetAllBtn">전체 초기화</button>
+      </div>
+      <div id="calendarGrid" class="calendar-grid"></div>
+      <p class="hint">초록색은 완료한 날입니다. 이 기록은 현재 기기의 브라우저에 저장됩니다.</p>
     </section>
 
     <section class="card">
@@ -45,13 +76,20 @@
       <div id="planList" class="plan-list"></div>
     </section>
 
+    <section class="card notice">
+      <h2>📢 학생부 공지</h2>
+      <p>말씀365는 1년 동안 함께 말씀을 읽기 위한 학생부 프로젝트입니다.</p>
+      <p>읽은 뒤 <b>읽었어요</b>를 눌러 말씀 루틴을 만들어 보세요.</p>
+    </section>
+
     <nav class="bottom-nav">
-      <button class="active">홈</button>
-      <button onclick="document.querySelector('.plan-list').scrollIntoView({behavior:'smooth'})">읽기표</button>
-      <button onclick="alert('성경퀴즈 확장 예정입니다!')">퀴즈</button>
-      <button onclick="alert('학생부 공지 기능 추가 예정입니다!')">공지</button>
+      <button onclick="scrollToTop()" class="active">홈</button>
+      <button onclick="scrollToSection('calendarGrid')">체크</button>
+      <button onclick="scrollToSection('quizQuestion')">퀴즈</button>
+      <button onclick="scrollToSection('planList')">읽기표</button>
     </nav>
   </main>
+
   <script src="app.js"></script>
 </body>
 </html>
